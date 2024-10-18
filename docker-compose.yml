@@ -1,0 +1,22 @@
+services:
+  modulemonolith.api:
+    image: ${DOCKER_REGISTRY-}modulemonolithapi
+    container_name: ModuleMonolith.Api
+    build:
+      context: .
+      dockerfile: source/Api/ModuleMonolith.Api/Dockerfile
+    ports:
+      - 5000:8080
+      - 5001:8081
+
+  modulemonolith.database:
+    image: postgres:latest
+    container_name: ModuleMonolith.Database
+    environment:
+      - POSTGRES_DB=modulemonolith
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
