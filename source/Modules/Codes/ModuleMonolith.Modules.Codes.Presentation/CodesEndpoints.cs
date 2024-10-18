@@ -9,5 +9,9 @@ public static class CodesEndpoints
     {
         CreateCode.MapEndpoint(app);
         GetCode.MapEndpoint(app);
+        GetCodes.MapEndpoint(app);
+        PrintCode.MapEndpoint(app);
+        ValidateCode.MapEndpoint(app);
+        DefectCode.MapEndpoint(app);
     }
 }

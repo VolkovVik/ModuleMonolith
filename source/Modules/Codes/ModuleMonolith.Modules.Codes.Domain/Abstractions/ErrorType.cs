@@ -1,5 +1,4 @@
-﻿using Evently.Modules.Events.Domain.Abstractions;
-namespace ModuleMonolith.Modules.Codes.Domain.Abstractions;
+﻿namespace ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
 public enum ErrorType
 {

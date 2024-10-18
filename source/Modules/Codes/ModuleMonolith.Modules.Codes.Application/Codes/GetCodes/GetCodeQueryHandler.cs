@@ -6,9 +6,9 @@ using ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
 namespace ModuleMonolith.Modules.Codes.Application.Codes.GetCode;
 
-internal sealed class GetCodeQueryHandler(IDbConnectionFactory dbConnectionFactory) : IQueryHandler<GetCodeQuery, CodeResponse?>
+internal sealed class GetCodesQueryHandler(IDbConnectionFactory dbConnectionFactory) : IQueryHandler<GetCodesQuery, IReadOnlyCollection<CodeResponse>>
 {
-    public async Task<Result<CodeResponse?>> Handle(GetCodeQuery request, CancellationToken cancellationToken)
+    public async Task<Result<IReadOnlyCollection<CodeResponse>>> Handle(GetCodesQuery request, CancellationToken cancellationToken)
     {
         await using var connection = await dbConnectionFactory.OpenConnectionAsync(cancellationToken);
         const string sql =
@@ -19,9 +19,8 @@ internal sealed class GetCodeQueryHandler(IDbConnectionFactory dbConnectionFacto
                  e.is_validated AS {nameof(CodeResponse.IsValidated)},
                  e.is_defeted AS {nameof(CodeResponse.IsDefeted)}
              FROM codes.codes e
-             WHERE e.id = @CodeId
              """;
-        var value = await connection.QuerySingleOrDefaultAsync<CodeResponse>(sql, new { request.CodeId });
-        return value;
+        var items = (await connection.QueryAsync<CodeResponse>(sql, request)).AsList();
+        return items;
     }
 }

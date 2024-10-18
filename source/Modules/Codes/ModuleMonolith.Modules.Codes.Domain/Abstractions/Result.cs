@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
-namespace Evently.Modules.Events.Domain.Abstractions;
+namespace ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
 public class Result
 {

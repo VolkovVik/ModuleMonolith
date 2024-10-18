@@ -1,6 +1,6 @@
 ﻿using ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
-namespace ModuleMonolith.Modules.Codes.Domain.Codes;
+namespace ModuleMonolith.Modules.Codes.Domain.Codes.DomainEvents;
 
 public sealed class CodeCreatedDomainEvent(Guid codeId) : DomainEvent
 {
