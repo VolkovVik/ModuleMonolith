@@ -8,16 +8,7 @@ internal sealed class CreateCodeCommandHandler(ICodesRepository codesRepository,
 {
     public async Task<Guid> Handle(CreateCodeCommand request, CancellationToken cancellationToken)
     {
-        var code = new Code
-        {
-            Id = Guid.NewGuid(),
-            Value = request.Value,
-            IsValidated = request.IsValidated,
-            IsDefeted = request.IsDefeted,
-            PrintingStatus = CodePrintingStatus.Unprinted,
-            AggregatingStatus = CodeAggregatingStatus.None
-        };
-
+        var code = Code.Create(request.Value, request.IsValidated, request.IsDefeted);
         await codesRepository.Insert(code, cancellationToken);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
