@@ -1,5 +1,4 @@
-﻿using Evently.Modules.Events.Infrastructure.Data;
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -10,6 +9,7 @@ using ModuleMonolith.Modules.Codes.Application;
 using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using ModuleMonolith.Modules.Codes.Domain.Codes;
 using ModuleMonolith.Modules.Codes.Infrastructure.Codes;
+using ModuleMonolith.Modules.Codes.Infrastructure.Data;
 using ModuleMonolith.Modules.Codes.Infrastructure.Database;
 using ModuleMonolith.Modules.Codes.Presentation;
 using Npgsql;

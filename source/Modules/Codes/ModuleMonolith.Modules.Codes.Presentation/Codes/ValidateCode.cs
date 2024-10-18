@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Modules.Codes.Application.Codes.ValidateCode;
+using ModuleMonolith.Modules.Codes.Presentation.ApiResults;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.Codes;
 
@@ -13,8 +14,8 @@ internal static class ValidateCode
         app.MapPost("codes/validate", async (Request request, ISender sender, CancellationToken cancellationToken) =>
         {
             var command = new ValidateCodeCommand(request.Id);
-            var id = await sender.Send(command, cancellationToken);
-            return Results.Ok(id);
+            var result = await sender.Send(command, cancellationToken);
+            return result.Match(Results.NoContent, ApiResults.ApiResults.Problem);
         })
         .WithTags(Tags.Codes);
     }

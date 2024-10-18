@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Modules.Codes.Application.Codes.PrintCode;
+using ModuleMonolith.Modules.Codes.Presentation.ApiResults;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.Codes;
 
@@ -13,8 +14,8 @@ internal static class PrintCode
         app.MapPost("codes/print", async (Request request, ISender sender, CancellationToken cancellationToken) =>
         {
             var command = new PrintCodeCommand(request.Id);
-            var id = await sender.Send(command, cancellationToken);
-            return Results.Ok(id);
+            var result = await sender.Send(command, cancellationToken);
+            return result.Match(Results.NoContent, ApiResults.ApiResults.Problem);
         })
         .WithTags(Tags.Codes);
     }

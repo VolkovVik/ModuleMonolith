@@ -4,7 +4,7 @@ using ModuleMonolith.Modules.Codes.Application.Abstractions.Messaging;
 using ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
 using ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
-namespace ModuleMonolith.Modules.Codes.Application.Codes.GetCode;
+namespace ModuleMonolith.Modules.Codes.Application.Codes.GetCodes;
 
 internal sealed class GetCodesQueryHandler(IDbConnectionFactory dbConnectionFactory) : IQueryHandler<GetCodesQuery, IReadOnlyCollection<CodeResponse>>
 {

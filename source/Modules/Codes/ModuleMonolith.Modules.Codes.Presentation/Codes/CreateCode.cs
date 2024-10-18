@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
+using ModuleMonolith.Modules.Codes.Presentation.ApiResults;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.Codes;
 
@@ -16,8 +17,8 @@ internal static class CreateCode
                 request.Value,
                 request.IsValidated,
                 request.IsDefeted);
-            var id = await sender.Send(command, cancellationToken);
-            return Results.Ok(id);
+            var result = await sender.Send(command, cancellationToken);
+            return result.Match(Results.Ok, ApiResults.ApiResults.Problem);
         })
         .WithTags(Tags.Codes);
     }

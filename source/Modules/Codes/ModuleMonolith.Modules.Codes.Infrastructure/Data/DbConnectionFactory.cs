@@ -2,7 +2,7 @@
 using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using Npgsql;
 
-namespace Evently.Modules.Events.Infrastructure.Data;
+namespace ModuleMonolith.Modules.Codes.Infrastructure.Data;
 
 internal sealed class DbConnectionFactory(NpgsqlDataSource dataSource) : IDbConnectionFactory
 {
