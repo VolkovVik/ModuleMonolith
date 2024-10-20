@@ -13,7 +13,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplication([ModuleMonolith.Modules.Codes.Application.AssemblyReference.Assembly]);
+
 builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("Database")!);
+
+builder.Configuration.AddModuleConfiguration(["events"]);
 
 builder.Services.AddCodesModule(builder.Configuration);
 
