@@ -25,13 +25,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleMonolith.Api", "sourc
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{65F71D1E-1DE5-4DCD-81A5-F21A5493A975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.Codes.Domain", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Domain\ModuleMonolith.Modules.Codes.Domain.csproj", "{0FAA8A9E-444E-44D7-AB1D-CE265ED8F00B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleMonolith.Modules.Codes.Domain", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Domain\ModuleMonolith.Modules.Codes.Domain.csproj", "{0FAA8A9E-444E-44D7-AB1D-CE265ED8F00B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.Codes.Application", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Application\ModuleMonolith.Modules.Codes.Application.csproj", "{57E6A3D5-037E-4BFF-A86E-177CFEA8DCDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleMonolith.Modules.Codes.Application", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Application\ModuleMonolith.Modules.Codes.Application.csproj", "{57E6A3D5-037E-4BFF-A86E-177CFEA8DCDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.Codes.Infrastructure", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Infrastructure\ModuleMonolith.Modules.Codes.Infrastructure.csproj", "{0E232D6F-D75A-4286-B921-0AB4FF46905C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleMonolith.Modules.Codes.Infrastructure", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Infrastructure\ModuleMonolith.Modules.Codes.Infrastructure.csproj", "{0E232D6F-D75A-4286-B921-0AB4FF46905C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.Codes.Presentation", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Presentation\ModuleMonolith.Modules.Codes.Presentation.csproj", "{1F1FA7AC-82C5-4EA3-A64A-A6C1F13F0949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleMonolith.Modules.Codes.Presentation", "source\Modules\Codes\ModuleMonolith.Modules.Codes.Presentation\ModuleMonolith.Modules.Codes.Presentation.csproj", "{1F1FA7AC-82C5-4EA3-A64A-A6C1F13F0949}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C00339BA-99D7-4F9E-B2D5-0EF061439E4B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleMonolith.Common.Application", "source\Common\ModuleMonolith.Common.Application\ModuleMonolith.Common.Application.csproj", "{BB57C31D-00B1-4D99-B967-8C351389CE80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Common.Domain", "source\Common\ModuleMonolith.Common.Domain\ModuleMonolith.Common.Domain.csproj", "{39FBD194-4491-4FA2-A370-7E825E121F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Common.Infrastructure", "source\Common\ModuleMonolith.Common.Infrastructure\ModuleMonolith.Common.Infrastructure.csproj", "{EF453CF6-5437-4AE1-A0D5-E91620D7DC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +71,18 @@ Global
 		{1F1FA7AC-82C5-4EA3-A64A-A6C1F13F0949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F1FA7AC-82C5-4EA3-A64A-A6C1F13F0949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1FA7AC-82C5-4EA3-A64A-A6C1F13F0949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB57C31D-00B1-4D99-B967-8C351389CE80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB57C31D-00B1-4D99-B967-8C351389CE80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB57C31D-00B1-4D99-B967-8C351389CE80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB57C31D-00B1-4D99-B967-8C351389CE80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FBD194-4491-4FA2-A370-7E825E121F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FBD194-4491-4FA2-A370-7E825E121F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FBD194-4491-4FA2-A370-7E825E121F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FBD194-4491-4FA2-A370-7E825E121F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF453CF6-5437-4AE1-A0D5-E91620D7DC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF453CF6-5437-4AE1-A0D5-E91620D7DC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF453CF6-5437-4AE1-A0D5-E91620D7DC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF453CF6-5437-4AE1-A0D5-E91620D7DC7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +96,10 @@ Global
 		{57E6A3D5-037E-4BFF-A86E-177CFEA8DCDE} = {FFDA2871-4C41-420D-BAF9-CFB0792D4150}
 		{0E232D6F-D75A-4286-B921-0AB4FF46905C} = {FFDA2871-4C41-420D-BAF9-CFB0792D4150}
 		{1F1FA7AC-82C5-4EA3-A64A-A6C1F13F0949} = {FFDA2871-4C41-420D-BAF9-CFB0792D4150}
+		{C00339BA-99D7-4F9E-B2D5-0EF061439E4B} = {58B6E72C-06B7-482E-9136-CB7F87D7E477}
+		{BB57C31D-00B1-4D99-B967-8C351389CE80} = {C00339BA-99D7-4F9E-B2D5-0EF061439E4B}
+		{39FBD194-4491-4FA2-A370-7E825E121F09} = {C00339BA-99D7-4F9E-B2D5-0EF061439E4B}
+		{EF453CF6-5437-4AE1-A0D5-E91620D7DC7A} = {C00339BA-99D7-4F9E-B2D5-0EF061439E4B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7980F2D-2EA7-4C77-A7C5-3E109EBE8925}

@@ -2,7 +2,7 @@
 using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using Npgsql;
 
-namespace ModuleMonolith.Modules.Codes.Infrastructure.Data;
+namespace ModuleMonolith.Common.Infrastructure.Data;
 
 internal sealed class DbConnectionFactory(NpgsqlDataSource dataSource) : IDbConnectionFactory
 {

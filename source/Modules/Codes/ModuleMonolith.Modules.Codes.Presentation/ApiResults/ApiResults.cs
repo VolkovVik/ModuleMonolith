@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using ModuleMonolith.Modules.Codes.Domain.Abstractions;
+using ModuleMonolith.Common.Domain;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.ApiResults;
 

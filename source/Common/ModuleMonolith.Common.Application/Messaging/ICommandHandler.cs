@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ModuleMonolith.Modules.Codes.Domain.Abstractions;
+using ModuleMonolith.Common.Domain;
 
-namespace ModuleMonolith.Modules.Codes.Application.Abstractions.Messaging;
+namespace ModuleMonolith.Common.Application.Messaging;
 
 public interface ICommandHandler<in TCommand> : IRequestHandler<TCommand, Result>
     where TCommand : ICommand;

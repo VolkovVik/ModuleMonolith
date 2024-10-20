@@ -1,5 +1,5 @@
-﻿using ModuleMonolith.Modules.Codes.Application.Abstractions.Messaging;
-using ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
+﻿using ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
+using ModuleMonolith.Common.Application.Messaging;
 
 namespace ModuleMonolith.Modules.Codes.Application.Codes.GetCodes;
 

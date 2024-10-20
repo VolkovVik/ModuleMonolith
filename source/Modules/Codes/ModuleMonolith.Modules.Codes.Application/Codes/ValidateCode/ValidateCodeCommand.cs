@@ -1,4 +1,4 @@
-﻿using ModuleMonolith.Modules.Codes.Application.Abstractions.Messaging;
+﻿using ModuleMonolith.Common.Application.Messaging;
 
 namespace ModuleMonolith.Modules.Codes.Application.Codes.ValidateCode;
 

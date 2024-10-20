@@ -1,4 +1,6 @@
 using ModuleMonolith.Api.Extensions;
+using ModuleMonolith.Common.Application;
+using ModuleMonolith.Common.Infrastructure;
 using ModuleMonolith.Modules.Codes.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplication([ModuleMonolith.Modules.Codes.Application.AssemblyReference.Assembly]);
+builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("Database")!);
 
 builder.Services.AddCodesModule(builder.Configuration);
 

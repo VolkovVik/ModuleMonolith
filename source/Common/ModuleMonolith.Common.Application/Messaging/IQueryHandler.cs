@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ModuleMonolith.Modules.Codes.Domain.Abstractions;
+using ModuleMonolith.Common.Domain;
 
-namespace ModuleMonolith.Modules.Codes.Application.Abstractions.Messaging;
+namespace ModuleMonolith.Common.Application.Messaging;
 
 public interface IQueryHandler<in TQuery, TResponse> : IRequestHandler<TQuery, Result<TResponse>>
     where TQuery : IQuery<TResponse>;

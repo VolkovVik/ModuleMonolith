@@ -1,8 +1,8 @@
 ﻿using Dapper;
+using ModuleMonolith.Common.Application.Messaging;
+using ModuleMonolith.Common.Domain;
 using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
-using ModuleMonolith.Modules.Codes.Application.Abstractions.Messaging;
 using ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
-using ModuleMonolith.Modules.Codes.Domain.Abstractions;
 
 namespace ModuleMonolith.Modules.Codes.Application.Codes.GetCodes;
 

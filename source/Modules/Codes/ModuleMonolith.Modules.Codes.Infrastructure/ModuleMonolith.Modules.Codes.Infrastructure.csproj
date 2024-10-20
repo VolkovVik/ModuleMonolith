@@ -1,18 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\ModuleMonolith.Common.Infrastructure\ModuleMonolith.Common.Infrastructure.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Codes.Application\ModuleMonolith.Modules.Codes.Application.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Codes.Presentation\ModuleMonolith.Modules.Codes.Presentation.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
-  </ItemGroup>
+  </ItemGroup> 
 
   <ItemGroup>
     <Folder Include="Database\Migrations\" />
-    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

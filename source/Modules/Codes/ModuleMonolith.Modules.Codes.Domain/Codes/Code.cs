@@ -1,4 +1,4 @@
-﻿using ModuleMonolith.Modules.Codes.Domain.Abstractions;
+﻿using ModuleMonolith.Common.Domain;
 using ModuleMonolith.Modules.Codes.Domain.Codes.DomainEvents;
 
 namespace ModuleMonolith.Modules.Codes.Domain.Codes;

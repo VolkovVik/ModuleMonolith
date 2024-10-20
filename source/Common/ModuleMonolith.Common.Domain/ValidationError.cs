@@ -1,4 +1,4 @@
-﻿namespace ModuleMonolith.Modules.Codes.Domain.Abstractions;
+﻿namespace ModuleMonolith.Common.Domain;
 
 public sealed record ValidationError : Error
 {

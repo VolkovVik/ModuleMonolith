@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace ModuleMonolith.Modules.Codes.Domain.Abstractions;
+namespace ModuleMonolith.Common.Domain;
 
 public class Result
 {
