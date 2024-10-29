@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-namespace ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
+namespace ModuleMonolith.Common.Application.Data;
 
 public interface IDbConnectionFactory
 {

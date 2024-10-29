@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModuleMonolith.Modules.Codes.Application;
-using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using ModuleMonolith.Modules.Codes.Domain.Codes;
 using ModuleMonolith.Modules.Codes.Infrastructure.Codes;
 using ModuleMonolith.Modules.Codes.Infrastructure.Database;
 using ModuleMonolith.Modules.Codes.Presentation;
+using ModuleMonolith.Common.Application.Data;
 
 namespace ModuleMonolith.Modules.Codes.Infrastructure;
 

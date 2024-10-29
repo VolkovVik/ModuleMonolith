@@ -1,7 +1,7 @@
 ﻿using ModuleMonolith.Common.Application.Messaging;
 using ModuleMonolith.Common.Domain;
-using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using ModuleMonolith.Modules.Codes.Domain.Codes;
+using ModuleMonolith.Common.Application.Data;
 
 namespace ModuleMonolith.Modules.Codes.Application.Codes.DefectCode;
 

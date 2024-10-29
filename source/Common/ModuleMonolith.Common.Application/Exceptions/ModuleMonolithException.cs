@@ -2,9 +2,9 @@
 
 namespace ModuleMonolith.Common.Application.Exceptions;
 
-public sealed class EventlyException : Exception
+public sealed class ModuleMonolithException : Exception
 {
-    public EventlyException(string requestName, Error? error = default, Exception? innerException = default)
+    public ModuleMonolithException(string requestName, Error? error = default, Exception? innerException = default)
         : base("Application exception", innerException)
     {
         RequestName = requestName;

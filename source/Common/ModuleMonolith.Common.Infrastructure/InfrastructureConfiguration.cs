@@ -3,8 +3,8 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using ModuleMonolith.Common.Application.Clock;
 using ModuleMonolith.Common.Infrastructure.Clock;
 using ModuleMonolith.Common.Infrastructure.Data;
-using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using Npgsql;
+using ModuleMonolith.Common.Application.Data;
 
 namespace ModuleMonolith.Common.Infrastructure;
 

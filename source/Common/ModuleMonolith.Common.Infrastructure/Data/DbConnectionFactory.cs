@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
-using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using Npgsql;
+using ModuleMonolith.Common.Application.Data;
 
 namespace ModuleMonolith.Common.Infrastructure.Data;
 

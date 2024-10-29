@@ -1,6 +1,6 @@
-﻿using ModuleMonolith.Common.Application.Messaging;
+﻿using ModuleMonolith.Common.Application.Data;
+using ModuleMonolith.Common.Application.Messaging;
 using ModuleMonolith.Common.Domain;
-using ModuleMonolith.Modules.Codes.Application.Abstractions.Data;
 using ModuleMonolith.Modules.Codes.Domain.Codes;
 
 namespace ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
