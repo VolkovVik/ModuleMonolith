@@ -6,6 +6,8 @@ internal sealed class CreateCodeCommandValidator : AbstractValidator<CreateCodeC
 {
     public CreateCodeCommandValidator()
     {
-        RuleFor(x => x.Value).NotEmpty();
+        RuleFor(x => x.Value)
+            .Must(x => !string.IsNullOrWhiteSpace(x))
+            .WithMessage("Value cannot be null or empty.");
     }
 }
