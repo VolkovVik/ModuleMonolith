@@ -20,3 +20,13 @@ services:
       - ./.containers/db:/var/lib/postgresql/data
     ports:
       - 5434:5432
+
+  modulemonolith.seq:
+    image: datalust/seq:latest
+    container_name: ModuleMonolith.Seq
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5342:5341
+      - 8081:80
+
