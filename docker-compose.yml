@@ -30,3 +30,11 @@ services:
       - 5342:5341
       - 8081:80
 
+  evently.redis:
+    image: redis:latest
+    container_name: ModuleMonolith.Redis
+    restart: always
+    ports:
+      - 6379:6379
+
+
