@@ -1,3 +1,5 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using ModuleMonolith.Api.Extensions;
 using ModuleMonolith.Api.Middleware;
 using ModuleMonolith.Common.Application;
@@ -23,11 +25,15 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddApplication([ModuleMonolith.Modules.Codes.Application.AssemblyReference.Assembly]);
 
-builder.Services.AddInfrastructure(
-    builder.Configuration.GetConnectionString("Database")!,
-    builder.Configuration.GetConnectionString("Cache")!);
+var databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
+var CacheConnectionString = builder.Configuration.GetConnectionString("Cache")!;
+builder.Services.AddInfrastructure(databaseConnectionString, CacheConnectionString);
 
 builder.Configuration.AddModuleConfiguration(["codes"]);
+
+builder.Services.AddHealthChecks()
+    .AddNpgSql(databaseConnectionString)
+    .AddRedis(CacheConnectionString);
 
 builder.Services.AddCodesModule(builder.Configuration);
 
@@ -48,6 +54,11 @@ app.UseAuthorization();
 app.MapControllers();
 
 CodesModule.MapEndpoints(app);
+
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.UseSerilogRequestLogging();
 
