@@ -1,10 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\ModuleMonolith.Common.Presentation\ModuleMonolith.Common.Presentation.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Codes.Application\ModuleMonolith.Modules.Codes.Application.csproj" />
   </ItemGroup>
 

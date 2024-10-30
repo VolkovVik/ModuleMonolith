@@ -4,6 +4,7 @@ using ModuleMonolith.Api.Extensions;
 using ModuleMonolith.Api.Middleware;
 using ModuleMonolith.Common.Application;
 using ModuleMonolith.Common.Infrastructure;
+using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Codes.Infrastructure;
 using Serilog;
 
@@ -53,7 +54,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-CodesModule.MapEndpoints(app);
+app.MapEndpoints();
 
 app.MapHealthChecks("/health", new HealthCheckOptions
 {

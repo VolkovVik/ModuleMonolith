@@ -1,7 +1,7 @@
 ﻿
 using ModuleMonolith.Common.Domain;
 
-namespace ModuleMonolith.Modules.Codes.Presentation.ApiResults;
+namespace ModuleMonolith.Common.Presentation.ApiResults;
 
 public static class ResultExtensions
 {

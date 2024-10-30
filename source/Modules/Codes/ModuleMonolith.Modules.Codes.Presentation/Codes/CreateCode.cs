@@ -2,14 +2,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using ModuleMonolith.Common.Presentation.ApiResults;
+using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Codes.Application.Codes.CreateCode;
-using ModuleMonolith.Modules.Codes.Presentation.ApiResults;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.Codes;
 
-internal static class CreateCode
+internal sealed class CreateCode : IEndpoint
 {
-    internal static void MapEndpoint(IEndpointRouteBuilder app)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapPost("codes", async (Request request, ISender sender, CancellationToken cancellationToken) =>
         {
@@ -18,7 +19,7 @@ internal static class CreateCode
                 request.IsValidated,
                 request.IsDefeted);
             var result = await sender.Send(command, cancellationToken);
-            return result.Match(Results.Ok, ApiResults.ApiResults.Problem);
+            return result.Match(Results.Ok, ApiResults.Problem);
         })
         .WithTags(Tags.Codes);
     }
