@@ -1,16 +1,16 @@
-﻿using MediatR;
+﻿using Carter;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Common.Presentation.ApiResults;
-using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Codes.Application.Codes.GetCode;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.Codes;
 
-internal sealed class GetCode : IEndpoint
+public sealed class GetCode : ICarterModule
 {
-    public void MapEndpoint(IEndpointRouteBuilder app)
+    public void AddRoutes(IEndpointRouteBuilder app)
     {
         app.MapGet("codes/{id}", async (Guid id, ISender sender, CancellationToken cancellationToken) =>
         {

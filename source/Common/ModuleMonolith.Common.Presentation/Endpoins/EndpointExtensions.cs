@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Carter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +19,8 @@ public static class EndpointExtensions
             .ToArray();
 
         services.TryAddEnumerable(serviceDescriptors);
+
+        services.AddCarter(new DependencyContextAssemblyCatalogCustom(assemblies));
 
         return services;
     }

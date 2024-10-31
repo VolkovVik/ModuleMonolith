@@ -5,6 +5,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Carter" Version="8.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ModuleMonolith.Common.Domain\ModuleMonolith.Common.Domain.csproj" />
   </ItemGroup>
 

@@ -1,10 +1,10 @@
+using Carter;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using ModuleMonolith.Api.Extensions;
 using ModuleMonolith.Api.Middleware;
 using ModuleMonolith.Common.Application;
 using ModuleMonolith.Common.Infrastructure;
-using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Codes.Infrastructure;
 using Serilog;
 
@@ -54,7 +54,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapEndpoints();
+app.MapCarter();
 
 app.MapHealthChecks("/health", new HealthCheckOptions
 {

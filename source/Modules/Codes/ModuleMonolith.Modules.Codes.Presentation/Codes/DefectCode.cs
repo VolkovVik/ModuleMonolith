@@ -1,16 +1,16 @@
-﻿using MediatR;
+﻿using Carter;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Common.Presentation.ApiResults;
-using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Codes.Application.Codes.DefectCode;
 
 namespace ModuleMonolith.Modules.Codes.Presentation.Codes;
 
-internal sealed class DefectCode : IEndpoint
+public sealed class DefectCode : ICarterModule
 {
-    public void MapEndpoint(IEndpointRouteBuilder app)
+    public void AddRoutes(IEndpointRouteBuilder app)
     {
         app.MapPost("codes/defect", async (Request request, ISender sender, CancellationToken cancellationToken) =>
         {
