@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Modules\Codes\ModuleMonolith.Modules.Codes.Infrastructure\ModuleMonolith.Modules.Codes.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Users\ModuleMonolith.Modules.Users.Infrastructure\ModuleMonolith.Modules.Users.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
