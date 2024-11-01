@@ -12,13 +12,13 @@ public sealed class RegisterUser : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("users/register", async (Request request, ISender sender) =>
+        app.MapPost("users/register", async (Request request, ISender sender, CancellationToken cancellationToken) =>
         {
             var result = await sender.Send(new RegisterUserCommand(
                 request.Email,
                 request.Password,
                 request.FirstName,
-                request.LastName));
+                request.LastName), cancellationToken);
 
             return result.Match(Results.Ok, ApiResults.Problem);
         })

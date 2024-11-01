@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Common.Presentation.ApiResults;
-using ModuleMonolith.Modules.Users.Application.Users.GetUser;
+using ModuleMonolith.Modules.Users.Application.Users.GetUsers;
 
 namespace ModuleMonolith.Modules.Users.Presentation.Users;
 
-public sealed class GetUserProfile : ICarterModule
+public sealed class GetUsersProfile : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("users/{id}/profile", async (Guid id, ISender sender, CancellationToken cancellationToken) =>
+        app.MapGet("users/profile", async (ISender sender, CancellationToken cancellationToken) =>
         {
-            var result = await sender.Send(new GetUserQuery(id), cancellationToken);
+            var result = await sender.Send(new GetUsersQuery(), cancellationToken);
 
             return result.Match(Results.Ok, ApiResults.Problem);
         })

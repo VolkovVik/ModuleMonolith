@@ -12,12 +12,12 @@ public sealed class UpdateUserProfile : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPut("users/{id}/profile", async (Guid id, Request request, ISender sender) =>
+        app.MapPut("users/{id}/profile", async (Guid id, Request request, ISender sender, CancellationToken cancellationToken) =>
         {
             var result = await sender.Send(new UpdateUserCommand(
                 id,
                 request.FirstName,
-                request.LastName));
+                request.LastName), cancellationToken);
 
             return result.Match(Results.NoContent, ApiResults.Problem);
         })

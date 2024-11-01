@@ -25,11 +25,18 @@ public static class InfrastructureConfiguration
 
         services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
 
-        var connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString) as IConnectionMultiplexer;
-        services.TryAddSingleton(connectionMultiplexer);
+        try
+        {
+            var connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString) as IConnectionMultiplexer;
+            services.TryAddSingleton(connectionMultiplexer);
 
-        services.AddStackExchangeRedisCache(options =>
-            options.ConnectionMultiplexerFactory = () => Task.FromResult(connectionMultiplexer));
+            services.AddStackExchangeRedisCache(options =>
+                options.ConnectionMultiplexerFactory = () => Task.FromResult(connectionMultiplexer));
+        }
+        catch
+        {
+            services.AddDistributedMemoryCache();
+        }
 
         services.TryAddSingleton<ICacheService, CacheService>();
 
