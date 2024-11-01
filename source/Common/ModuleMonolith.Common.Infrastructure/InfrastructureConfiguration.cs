@@ -6,6 +6,7 @@ using ModuleMonolith.Common.Application.Data;
 using ModuleMonolith.Common.Infrastructure.Caching;
 using ModuleMonolith.Common.Infrastructure.Clock;
 using ModuleMonolith.Common.Infrastructure.Data;
+using ModuleMonolith.Common.Infrastructure.Interceptors;
 using Npgsql;
 using StackExchange.Redis;
 
@@ -19,6 +20,9 @@ public static class InfrastructureConfiguration
         services.TryAddSingleton(npgsqlDataSource);
 
         services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+
+        services.AddSingleton<PublishDomainEventsInterceptor>();
+
         services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
 
         var connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString) as IConnectionMultiplexer;

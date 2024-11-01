@@ -39,7 +39,7 @@ public sealed class Code : Entity
             AggregatingStatus = CodeAggregatingStatus.None
         };
 
-        code.Raise(new CodeCreatedDomainEvent(code.Id));
+        code.Raise(new CreateCodeDomainEvent(code.Id));
 
         return code;
     }
@@ -49,7 +49,7 @@ public sealed class Code : Entity
         PrintedAtUtc = DateTime.UtcNow;
         PrintingStatus = CodePrintingStatus.Printed;
 
-        Raise(new CodePrintedDomainEvent(Id));
+        Raise(new PrintCodeDomainEvent(Id));
 
         return Result.Success();
     }
@@ -62,7 +62,7 @@ public sealed class Code : Entity
         ValidatedAtUtc = DateTime.UtcNow;
         IsValidated = true;
 
-        Raise(new CodeValidatedDomainEvent(Id));
+        Raise(new ValidateCodeDomainEvent(Id));
 
         return Result.Success();
     }
@@ -75,7 +75,7 @@ public sealed class Code : Entity
         DefectedAtUtc = DateTime.UtcNow;
         IsDefeted = true;
 
-        Raise(new CodeDefectedDomainEvent(Id));
+        Raise(new DefectCodeDomainEvent(Id));
 
         return Result.Success();
     }

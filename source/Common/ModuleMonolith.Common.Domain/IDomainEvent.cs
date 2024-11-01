@@ -1,6 +1,8 @@
-﻿namespace ModuleMonolith.Common.Domain;
+﻿using MediatR;
 
-public interface IDomainEvent
+namespace ModuleMonolith.Common.Domain;
+
+public interface IDomainEvent : INotification
 {
     Guid Id { get; }
 
