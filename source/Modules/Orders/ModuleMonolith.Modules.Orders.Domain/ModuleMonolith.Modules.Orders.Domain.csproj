@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\Codes\ModuleMonolith.Modules.Codes.Domain\ModuleMonolith.Modules.Codes.Domain.csproj" />
+  </ItemGroup>
+</Project>

@@ -6,6 +6,7 @@ using ModuleMonolith.Api.Middleware;
 using ModuleMonolith.Common.Application;
 using ModuleMonolith.Common.Infrastructure;
 using ModuleMonolith.Modules.Codes.Infrastructure;
+using ModuleMonolith.Modules.Orders.Infrastructure;
 using ModuleMonolith.Modules.Users.Infrastructure;
 using Serilog;
 
@@ -25,13 +26,16 @@ builder.Services.AddSwaggerGen(options =>
     options.CustomSchemaIds(t => t.FullName?.Replace("+", "."));
 });
 
-builder.Services.AddApplication([ModuleMonolith.Modules.Codes.Application.AssemblyReference.Assembly, ModuleMonolith.Modules.Users.Application.AssemblyReference.Assembly]);
+builder.Services.AddApplication([
+    ModuleMonolith.Modules.Codes.Application.AssemblyReference.Assembly,
+    ModuleMonolith.Modules.Users.Application.AssemblyReference.Assembly,
+    ModuleMonolith.Modules.Orders.Application.AssemblyReference.Assembly]);
 
 var databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
 var CacheConnectionString = builder.Configuration.GetConnectionString("Cache")!;
 builder.Services.AddInfrastructure(databaseConnectionString, CacheConnectionString);
 
-builder.Configuration.AddModuleConfiguration(["codes", "users"]);
+builder.Configuration.AddModuleConfiguration(["codes", "users", "orders"]);
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
@@ -39,6 +43,7 @@ builder.Services.AddHealthChecks()
 
 builder.Services.AddCodesModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);
+builder.Services.AddOrdersModule(builder.Configuration);
 
 var app = builder.Build();
 

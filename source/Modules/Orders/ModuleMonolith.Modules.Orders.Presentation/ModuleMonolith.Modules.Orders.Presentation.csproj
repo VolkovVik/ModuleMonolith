@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\ModuleMonolith.Common.Presentation\ModuleMonolith.Common.Presentation.csproj" />
+    <ProjectReference Include="..\ModuleMonolith.Modules.Orders.Application\ModuleMonolith.Modules.Orders.Application.csproj" />
+  </ItemGroup>
+</Project>

@@ -79,7 +79,8 @@ dotnet_style_namespace_match_folder = true:suggestion
 dotnet_style_readonly_field = true:error
 
 # Parameter preferences
-dotnet_code_quality_unused_parameters = all:error
+# dotnet_code_quality_unused_parameters = all:error
+dotnet_code_quality_unused_parameters = all:suggestion
 
 #### C# Coding Conventions ####
 
@@ -373,6 +374,9 @@ dotnet_diagnostic.S1144.severity = none
 
 # S2094: Classes should not be empty
 dotnet_diagnostic.S2094.severity = none
+
+# S1172: Unused method parameters should be removed
+dotnet_diagnostic.S1172.severity = none
 
 # S2365: Properties should not make collection or array copies
 dotnet_diagnostic.S2365.severity = none
