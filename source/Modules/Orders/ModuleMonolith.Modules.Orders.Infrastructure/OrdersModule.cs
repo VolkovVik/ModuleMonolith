@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ModuleMonolith.Common.Presentation.Endpoins;
+using ModuleMonolith.Modules.Orders.Application.Carts;
 
 namespace ModuleMonolith.Modules.Orders.Infrastructure;
 
@@ -19,6 +20,8 @@ public static class OrdersModule
     {
         /// var databaseConnectionString = configuration.GetConnectionString("Database")!;
         // Will inplement later
+
+        services.AddSingleton<CartService>();
 
         return services;
     }

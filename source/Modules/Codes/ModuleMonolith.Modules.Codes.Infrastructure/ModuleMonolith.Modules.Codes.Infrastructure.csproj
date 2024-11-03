@@ -4,6 +4,7 @@
     <ProjectReference Include="..\..\..\Common\ModuleMonolith.Common.Infrastructure\ModuleMonolith.Common.Infrastructure.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Codes.Application\ModuleMonolith.Modules.Codes.Application.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Codes.Presentation\ModuleMonolith.Modules.Codes.Presentation.csproj" />
+    <ProjectReference Include="..\ModuleMonolith.Modules.Codes.PublicApi\ModuleMonolith.Modules.Codes.PublicApi.csproj" />
   </ItemGroup> 
 
   <ItemGroup>

@@ -8,6 +8,8 @@ using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Codes.Domain.Codes;
 using ModuleMonolith.Modules.Codes.Infrastructure.Codes;
 using ModuleMonolith.Modules.Codes.Infrastructure.Database;
+using ModuleMonolith.Modules.Codes.Infrastructure.PublicApi;
+using ModuleMonolith.Modules.Codes.PublicApi;
 
 namespace ModuleMonolith.Modules.Codes.Infrastructure;
 
@@ -38,6 +40,9 @@ public static class CodesModule
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<CodesDbContext>());
 
         services.AddScoped<ICodesRepository, CodesRepository>();
+
+        services.AddScoped<ICodesApi, CodesApi>();
+
         return services;
     }
 }

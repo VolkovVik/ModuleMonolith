@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\ModuleMonolith.Common.Application\ModuleMonolith.Common.Application.csproj" />
+    <ProjectReference Include="..\..\Codes\ModuleMonolith.Modules.Codes.PublicApi\ModuleMonolith.Modules.Codes.PublicApi.csproj" />
+    <ProjectReference Include="..\..\Users\ModuleMonolith.Modules.Users.PublicApi\ModuleMonolith.Modules.Users.PublicApi.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Orders.Domain\ModuleMonolith.Modules.Orders.Domain.csproj" />
   </ItemGroup>
 </Project>

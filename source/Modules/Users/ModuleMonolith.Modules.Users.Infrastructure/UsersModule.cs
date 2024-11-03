@@ -7,7 +7,9 @@ using ModuleMonolith.Common.Presentation.Endpoins;
 using ModuleMonolith.Modules.Users.Application.Abstractions.Data;
 using ModuleMonolith.Modules.Users.Domain.Users;
 using ModuleMonolith.Modules.Users.Infrastructure.Database;
+using ModuleMonolith.Modules.Users.Infrastructure.PublicApi;
 using ModuleMonolith.Modules.Users.Infrastructure.Users;
+using ModuleMonolith.Modules.Users.PublicApi;
 
 namespace ModuleMonolith.Modules.Users.Infrastructure;
 
@@ -38,5 +40,7 @@ public static class UsersModule
         services.AddScoped<IUserRepository, UserRepository>();
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<UsersDbContext>());
+
+        services.AddScoped<IUsersApi, UsersApi>();
     }
 }
