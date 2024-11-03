@@ -6,7 +6,7 @@ using ModuleMonolith.Modules.Orders.Domain.Customers;
 using ModuleMonolith.Modules.Orders.Domain.Events;
 using ModuleMonolith.Modules.Users.PublicApi;
 
-namespace ModuleMonolith.Modules.Orders.Application.Carts.AddItemToCart;
+namespace ModuleMonolith.Modules.Orders.Application.Carts.AddOrder;
 
 public sealed record AddOrderCommand(Guid CustomerId, Guid TicketTypeId, decimal Quantity) : ICommand;
 

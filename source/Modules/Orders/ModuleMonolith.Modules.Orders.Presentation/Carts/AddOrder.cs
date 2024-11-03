@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ModuleMonolith.Common.Presentation.ApiResults;
-using ModuleMonolith.Modules.Orders.Application.Carts.AddItemToCart;
+using ModuleMonolith.Modules.Orders.Application.Carts.AddOrder;
 
 namespace ModuleMonolith.Modules.Orders.Presentation.Carts;
 

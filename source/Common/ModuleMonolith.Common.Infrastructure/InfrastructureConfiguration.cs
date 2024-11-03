@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using MassTransit;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ModuleMonolith.Common.Application.Caching;
 using ModuleMonolith.Common.Application.Clock;
 using ModuleMonolith.Common.Application.Data;
+using ModuleMonolith.Common.Application.EventBus;
 using ModuleMonolith.Common.Infrastructure.Caching;
 using ModuleMonolith.Common.Infrastructure.Clock;
 using ModuleMonolith.Common.Infrastructure.Data;
@@ -14,7 +16,11 @@ namespace ModuleMonolith.Common.Infrastructure;
 
 public static class InfrastructureConfiguration
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, string databaseConnectionString, string redisConnectionString)
+    public static IServiceCollection AddInfrastructure(
+        this IServiceCollection services,
+        Action<IRegistrationConfigurator>[] moduleConfigureConsumers,
+        string databaseConnectionString,
+        string redisConnectionString)
     {
         var npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
         services.TryAddSingleton(npgsqlDataSource);
@@ -39,6 +45,25 @@ public static class InfrastructureConfiguration
         }
 
         services.TryAddSingleton<ICacheService, CacheService>();
+
+        services.TryAddSingleton<IEventBus, EventBus.EventBus>();
+
+        services.AddMassTransit(configure =>
+        {
+            ////configure.AddConsumer<>();
+            foreach (var configureConsumer in moduleConfigureConsumers)
+            {
+                configureConsumer(configure);
+            }
+
+            configure.SetKebabCaseEndpointNameFormatter();
+
+            configure.UsingInMemory((context, cfg) =>
+            {
+                cfg.ConfigureEndpoints(context);
+            });
+        });
+
 
         return services;
     }

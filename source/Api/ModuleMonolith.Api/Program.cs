@@ -32,14 +32,17 @@ builder.Services.AddApplication([
     ModuleMonolith.Modules.Orders.Application.AssemblyReference.Assembly]);
 
 var databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
-var CacheConnectionString = builder.Configuration.GetConnectionString("Cache")!;
-builder.Services.AddInfrastructure(databaseConnectionString, CacheConnectionString);
+var cacheConnectionString = builder.Configuration.GetConnectionString("Cache")!;
+builder.Services.AddInfrastructure(
+    [OrdersModule.ConfigureConsumers],
+    databaseConnectionString,
+    cacheConnectionString);
 
 builder.Configuration.AddModuleConfiguration(["codes", "users", "orders"]);
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
-    .AddRedis(CacheConnectionString);
+    .AddRedis(cacheConnectionString);
 
 builder.Services.AddCodesModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);

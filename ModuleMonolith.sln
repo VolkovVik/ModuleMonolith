@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.User
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.Codes.PublicApi", "source\Modules\Codes\ModuleMonolith.Modules.Codes.PublicApi\ModuleMonolith.Modules.Codes.PublicApi.csproj", "{4624199A-673A-4895-BF2F-994A1B2DE060}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleMonolith.Modules.Users.IntegrationEvents", "source\Modules\Users\ModuleMonolith.Modules.Users.IntegrationEvents\ModuleMonolith.Modules.Users.IntegrationEvents.csproj", "{CE98DEF6-F20C-4558-B4E0-E5088B1B44A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{4624199A-673A-4895-BF2F-994A1B2DE060}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4624199A-673A-4895-BF2F-994A1B2DE060}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4624199A-673A-4895-BF2F-994A1B2DE060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE98DEF6-F20C-4558-B4E0-E5088B1B44A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE98DEF6-F20C-4558-B4E0-E5088B1B44A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE98DEF6-F20C-4558-B4E0-E5088B1B44A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE98DEF6-F20C-4558-B4E0-E5088B1B44A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +189,7 @@ Global
 		{D4686A94-EFDB-4477-8908-0D5BD9D4BA04} = {E8563F3A-3713-4063-A44E-59D3CAB56790}
 		{79962105-7E59-4F4F-B30D-10269EDC7C98} = {A651187A-BBD4-4CA4-98D8-9139C2147BC2}
 		{4624199A-673A-4895-BF2F-994A1B2DE060} = {FFDA2871-4C41-420D-BAF9-CFB0792D4150}
+		{CE98DEF6-F20C-4558-B4E0-E5088B1B44A3} = {A651187A-BBD4-4CA4-98D8-9139C2147BC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7980F2D-2EA7-4C77-A7C5-3E109EBE8925}

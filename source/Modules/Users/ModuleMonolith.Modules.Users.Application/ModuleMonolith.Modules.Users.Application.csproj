@@ -2,5 +2,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\ModuleMonolith.Common.Application\ModuleMonolith.Common.Application.csproj" />
     <ProjectReference Include="..\ModuleMonolith.Modules.Users.Domain\ModuleMonolith.Modules.Users.Domain.csproj" />
+    <ProjectReference Include="..\ModuleMonolith.Modules.Users.IntegrationEvents\ModuleMonolith.Modules.Users.IntegrationEvents.csproj" />
   </ItemGroup>
 </Project>
